@@ -4,7 +4,8 @@
  */
 
 
-const dirs = [[-1,0],[1,0],[0,-1],[0,1]]
+const dirs = [[1,0],[0,1],[-1,0],[0,-1]]
+
 var numIslands = function(grid) {
     let result = 0;
 
@@ -21,9 +22,9 @@ var numIslands = function(grid) {
                         const yy = y+dy
                         const xx = x+dx
                         if (-1 < yy && yy < grid.length && -1 < xx && xx < grid[0].length) {
-                            if (grid[yy][xx] === "1") {
-                                grid[yy][xx] = "0"
-                                tmp.push([yy,xx])
+                            if (grid[y+dy][x+dx] === "1") {
+                                grid[y+dy][x+dx] = "0"
+                                tmp.push([y+dy,x+dx])
                             }                             
                         } 
                     }
