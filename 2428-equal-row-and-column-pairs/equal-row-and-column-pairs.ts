@@ -16,7 +16,6 @@ function equalPairs(grid: number[][]): number {
 
         put(cols, tmp)
     }
-    console.log(rows,cols)
     let answer = 0;
     for (let i of Object.keys(rows)) {
         if (i in cols) {
