@@ -1,8 +1,10 @@
 class RecentCounter {
     public counter = []
+    public start = 0
 
     constructor() {
         this.counter = []
+        this.start = 0
     }
 
     ping(t: number): number {
@@ -10,11 +12,13 @@ class RecentCounter {
         const tmp = this.counter
         let count = 0
 
-        for (let i of tmp) {
-            if (i > t) {
+        for (let i = this.start ;i<tmp.length;i++) {
+            const val = tmp[i]
+            if (val > t) {
+                this.start = i
                 break
             }
-            if (t-3000 <= i && i <= t) {
+            if (t-3000 <= val && val <= t) {
                 count ++
             }
         }
