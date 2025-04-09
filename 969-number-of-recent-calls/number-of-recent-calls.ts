@@ -2,27 +2,17 @@ class RecentCounter {
     public counter = []
     public start = 0
 
-    constructor() {
-        this.counter = []
-        this.start = 0
-    }
+    constructor() {}
 
     ping(t: number): number {
         this.counter.push(t)
-        const tmp = this.counter
-        let count = 0
-
-        for (let i = this.start ;i<tmp.length;i++) {
-            const val = tmp[i]
-            if (val > t) {
-                this.start = i
-                break
-            }
-            if (t-3000 <= val && val <= t) {
-                count ++
+        for (let i=this.start; i<this.counter.length; i++) {
+            const val = this.counter[i]
+            if (t - 3000 > val) {
+                this.start = i + 1
             }
         }
-        return count
+        return this.counter.length - this.start
     }
 }
 
