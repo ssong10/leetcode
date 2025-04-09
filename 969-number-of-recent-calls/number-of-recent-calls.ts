@@ -10,6 +10,8 @@ class RecentCounter {
             const val = this.counter[i]
             if (t - 3000 > val) {
                 this.start = i + 1
+            } else {
+                break
             }
         }
         return this.counter.length - this.start
