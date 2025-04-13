@@ -27,7 +27,7 @@ function pairSum(head: ListNode | null): number {
     }
     
     let sum = 0
-    for (let i = 0;i<size;i++) {
+    for (let i = 0;i<size/2;i++) {
         if (head.val + reverse.val > sum) {
             sum = head.val + reverse.val
         } 
