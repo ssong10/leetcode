@@ -12,6 +12,7 @@
 
 function pairSum(head: ListNode | null): number {
     let reverse = null
+    let size = 0
     let tmp = head
 
     while (tmp) {
@@ -21,11 +22,12 @@ function pairSum(head: ListNode | null): number {
         } else {
             reverse = new ListNode(tmp.val)
         }
+        size ++
         tmp = tmp.next
     }
     
     let sum = 0
-    while (head) {
+    for (let i = 0;i<size;i++) {
         if (head.val + reverse.val > sum) {
             sum = head.val + reverse.val
         } 
