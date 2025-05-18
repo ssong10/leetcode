@@ -4,7 +4,6 @@ function canVisitAllRooms(rooms: number[][]): boolean {
     visited[0] = true
     let tmp = [];
     while (cango.length) {
-        console.log(cango)
         const next = cango.pop()
         visited[next] = true
         for (let i of rooms[next]) {
