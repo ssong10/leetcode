@@ -6,9 +6,6 @@ function combinationSum3(k: number, n: number): number[][] {
         if (i > 10 || sum > n) {
             return
         }
-        if (cur.length > 7) {
-            console.log(cur,i)
-        }
         if (cur.length === k) {
             if (sum === n) {
                 result.push(cur)
