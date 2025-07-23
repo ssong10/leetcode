@@ -1,7 +1,12 @@
 function missingNumber(nums: number[]): number {
-    const newSet = new Set(Array(nums.length + 1).fill(0).map((_,i) => i))
+    const newSet = new Set()
     for (let num of nums) {
-        newSet.delete(num)
+        newSet.add(num)
     }
-    return newSet.keys().next().value
+    
+    for (let i=0;i<nums.length+1;i++) {
+        if (!newSet.has(i)) {
+            return i
+        }
+    }
 };
