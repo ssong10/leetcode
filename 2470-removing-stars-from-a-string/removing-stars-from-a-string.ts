@@ -1,12 +1,11 @@
 function removeStars(s: string): string {
-    let answer = []
-    for (let i of s) {
-        if (i === '*') {
-            answer.pop()
+    const stack = []
+    for (let i = 0; i<s.length;i++) {
+        if (s[i] === '*') {
+            stack.pop()
         } else {
-            answer.push(i)
+            stack.push(s[i])
         }
     }
-
-    return answer.join('')
+    return stack.join('')
 };
